@@ -1,0 +1,51 @@
+-->docker is a light weight dauetg
+-->it isa portable
+-->vietual machines are over head..it reduce the system performence of the system...where as docker containers are light weight...we can run many operating systems on same hardware..
+-->they are portable because they donot use the volume..where as vms are taking large volume of storage it is difficult to move.
+
+-->build once,configure once,run anyware...
+-->docker client is the user interface that allows communication between the users and and thedocker daemon.
+-->docker deamon sits on the client machine and answering the requests services.
+-->docker index is a centralised registry allowing backup of docker container images and private access permissions.
+
+-->docker containers are actual containers running the applications and includes the operating systems,user addedfiles and meta data.
+-->docker images are all inclusive images that help launch docker containers.
+-->docker file is a file containing instructions that help automate image creation.
+-->layer:each file system that is stacked when docker mounts rootfs.
+
+-->to install docker...[sudo rpm install docker]
+-->basic docker commands:
+   --docker pull==pull a pre-built image from the public repos.
+   --docker run===run the container in one of three nodes:background,foreground,interactivd.
+   --docker logs==view the logs of running jobs.
+   --docker commit==save the container state as an image.
+   --docker images==obtain the list of all images.
+  --docker diff==list of changes in files and directories.
+  --docker build==build docker imageds from docker files.
+  --docker inspect==low level information about containers and images.
+  --docker attach==interact with running docker containers.
+  --docker kill==kill the main process of the docker container
+
+-->dockerfile
+   syntax:instruction argument
+-->dockerfile commands:
+   --maintainer <authorname> :set a name for author feild for the image.
+   --run<command> :execute a command in a shell.
+   --add <src><dest>:copy files from one location to other.
+   --cmd<executable,parm1,parm2>:provides defaults for an excuting container.
+   --expose<port> :ports on which container litstens to.
+   --entrypoint<executable,parm1,parm2>:configure a container as executable.
+   --workdia path/to/workdir:set working dorectory
+   --env<key><value>:set environment variables.
+   --user<uid>:set userid for use images
+   --volume['/data']:enable accesstoa directory from working container.
+
+
+--sudo docker run ubuntu12.16 ls[to download ubuntu image and  run]
+--sudo time docker run ubuntu12.16 ls[it gives the time when the docker start and stop]
+--sudo docker ps -a[it gives the all the containers which are running or not.it give all containers list where as "sudo docker ps"it gives only running containers]
+--sudo docker run ubuntu12.16 sleeep 10[it sleeps for ten seconds]
+--sudo docker run -d ubuntu12.16 sleeep 10[it runs the container in foreground mode,after running this if we check "docker ps" it gives the container in list]
+--sudo docker run -i ubuntu12.16 bash[this is called interactive mode,we can run our ubuntu commands in container like ls,cd,cp....]
+--after commit the docker run "sudo docker inspect 'dockername' is gives us whole information about container..it is mainly used to know ip of container]
+

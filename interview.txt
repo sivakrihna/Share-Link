@@ -1,0 +1,49 @@
+indimax----
+-->diff b/w df and du
+du == Disk Usage. It walks through directory tree and counts the sum size of all files therein. 
+      It may not output exact information due to the possibility of unreadable files, hardlinks in directory tree, etc. 
+      It will show information about the specific directory requested. Think, "How much disk space is being used by these files?"
+df == Disk Free. Looks at disk used blocks directly in filesystem metadata. 
+      Because of this it returns much faster that du but can only show info about the entire disk/partition. 
+      Think, "How much free disk space do I have?"
+-->ulimit
+   On Linux, when a process opens a file, the OS will check the max opened files limitation.
+   sudo ulimit -n 40000
+			(or)
+   edited "/etc/sysctl.conf" and put fs.file-max=40000. I've also edited /etc/security/limits.conf and updated hard and soft values,
+   Added following lines in /etc/security/limits.conf -
+
+*     soft    nofile          40000
+*     hard    nofile          40000
+
+
+-->types of memories in linux
+   VIRT: (virtual image) data+code+ shared libs (mem)
+   RES: (resident image) non-swapped memory _physical_ memory (code+data)
+   SHRshared mem) memory that can potentially be used bu other processes
+-->what is kill
+-->how you use it
+-->chef apply and chef client diff
+   The Chef client works with the Chef server to bring systems to their desired states with policies you provide as recipes.
+   chef apply works with local chef system
+
+
+-->what is test kichen
+   Use Kitchen to automatically test cookbook data across any combination of platforms and test suites:
+
+    Defined in a .kitchen.yml file
+   Uses a driver plugin architecture
+   Supports cookbook testing across many cloud providers and virtualization technologies
+   Supports all common testing frameworks that are used by the Ruby community
+
+-->how you create client
+-->explain your chef envirment
+-->how you boosttrap
+-->what do you need to create client(ip address)
+-->how you upload cookbook
+-->ec2
+-->ebc
+-->s3
+-->load balancing
+-->migration
+-->diff b/w svn and git
